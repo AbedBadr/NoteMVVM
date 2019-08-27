@@ -26,5 +26,10 @@ namespace NewNoteMVVM
         {
             this.InitializeComponent();
         }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
