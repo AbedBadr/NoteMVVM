@@ -18,6 +18,7 @@ namespace NewNoteMVVM.ViewModel
         public int No { get; set; }
         public string Text { get; set; }
         public string Subject { get; set; }
+        public int Index { get; set; }
 
         public NoteViewModel()
         {
@@ -38,6 +39,8 @@ namespace NewNoteMVVM.ViewModel
         {
             if (No <= Notes.Count && No > 0)
                 Notes.RemoveAt(No-1);
+            if (Index < Notes.Count && Index >= 0)
+                Notes.RemoveAt(Index);
 
             OnPropertyChanged();
         }
