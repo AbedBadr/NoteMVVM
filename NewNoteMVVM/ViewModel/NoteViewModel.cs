@@ -18,6 +18,7 @@ namespace NewNoteMVVM.ViewModel
         public int No { get; set; }
         public string Text { get; set; }
         public string Subject { get; set; }
+        public DateTime Date { get; set; }
         public int Index { get; set; }
 
         public NoteViewModel()
