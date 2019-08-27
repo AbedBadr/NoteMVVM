@@ -9,6 +9,17 @@
     x:Class="NewNoteMVVM.MainPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="NoteDataTemplate">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Subject}" FontSize="15" FontWeight="Bold"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Text}"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Date}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Page.DataContext>
         <ViewModel:NoteViewModel/>
@@ -23,7 +34,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" ItemsSource="{Binding Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <ListView HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" ItemsSource="{Binding Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource NoteDataTemplate}"/>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Subject" VerticalAlignment="Top"/>
             <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Subject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" MinWidth="150" MaxWidth="150"/>
