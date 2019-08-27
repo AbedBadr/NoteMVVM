@@ -26,24 +26,24 @@
         <ListView HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" ItemsSource="{Binding Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Subject" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Subject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Subject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" MinWidth="150" MaxWidth="150"/>
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Text" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" MaxWidth="150"/>
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" MaxWidth="150" MinWidth="150"/>
             <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:CallMethodAction MethodName="Add"/>
+                        <Core:CallMethodAction MethodName="Add" TargetObject="{Binding Mode=OneWay}"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="No" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding No, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding No, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" MinWidth="73.5" MaxWidth="73.5"/>
             <Button x:Name="RemoveBtn" Content="Remove" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:CallMethodAction MethodName="Remove"/>
+                        <Core:CallMethodAction MethodName="Remove" TargetObject="{Binding Mode=OneWay}"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
