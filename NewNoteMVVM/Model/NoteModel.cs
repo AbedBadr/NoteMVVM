@@ -25,11 +25,6 @@ namespace NewNoteMVVM.Model
             
         }
 
-        public static void DecreaseNoteCount()
-        {
-            _count--;
-        }
-
         public override string ToString()
         {
             return $"{nameof(No)}: {No}, {nameof(Text)}: {Text}, {nameof(Subject)}: {Subject}, {nameof(Date)}: {Date}";
