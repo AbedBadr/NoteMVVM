@@ -119,6 +119,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\RelayArgCommand.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\NoteViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
