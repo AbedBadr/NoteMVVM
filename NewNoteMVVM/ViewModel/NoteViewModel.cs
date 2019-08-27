@@ -36,7 +36,9 @@ namespace NewNoteMVVM.ViewModel
 
         public void Remove()
         {
-            Notes.RemoveAt(No);
+            if (No <= Notes.Count && No > 0)
+                Notes.RemoveAt(No-1);
+
             OnPropertyChanged();
         }
 
