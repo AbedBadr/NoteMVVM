@@ -23,7 +23,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" ItemsSource="{Binding Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <ListView HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" ItemsSource="{Binding Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Subject" VerticalAlignment="Top"/>
             <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Subject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" MinWidth="150" MaxWidth="150"/>
