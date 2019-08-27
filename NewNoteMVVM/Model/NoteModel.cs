@@ -8,7 +8,7 @@ namespace NewNoteMVVM.Model
 {
     class NoteModel
     {
-        private static int _count;
+        private static int _count = 0;
 
         public int No { get; set; }
         public string Text { get; set; }
